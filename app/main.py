@@ -6,10 +6,13 @@ from fastapi import FastAPI
 from app.config import settings
 from app.core.database import Base, engine
 
-# Import model agar SQLAlchemy mengenali tabel
+# Import database models
 from app.models.task import Task
+from app.models.finance import FinanceTransaction
 
+# Import API routers
 from app.api.tasks import router as task_router
+from app.api.finance import router as finance_router
 
 
 @asynccontextmanager
@@ -31,6 +34,7 @@ app = FastAPI(
 
 # Register API routers
 app.include_router(task_router)
+app.include_router(finance_router)
 
 
 @app.get("/")
