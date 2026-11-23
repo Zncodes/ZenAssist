@@ -1,0 +1,25 @@
+
+# Backend
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+
+# Database
+sqlalchemy
+
+# Web
+jinja2
+python-multipart
+
+# Telegram
+python-telegram-bot>=21,<23
+
+# Automation
+APScheduler>=3.10,<4
+
+# HTTP Client
+httpx
+
+# AI - digunakan pada tahap AI Assistant
+openai
