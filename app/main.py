@@ -13,11 +13,13 @@ from app.models.budget import MonthlyBudget
 from app.models.savings_goal import SavingsGoal
 from app.models.savings_contribution import SavingsContribution
 
+
 # API routers
 from app.api.tasks import router as task_router
 from app.api.finance import router as finance_router
 from app.api.budgets import router as budget_router
 from app.api.savings import router as savings_router
+from app.api.finance_dashboard import router as finance_dashboard_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -41,6 +43,7 @@ app.include_router(task_router)
 app.include_router(finance_router)
 app.include_router(budget_router)
 app.include_router(savings_router)
+app.include_router(finance_dashboard_router)
 
 @app.get("/")
 async def root():
