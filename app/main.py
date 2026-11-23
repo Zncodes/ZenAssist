@@ -6,14 +6,15 @@ from fastapi import FastAPI
 from app.config import settings
 from app.core.database import Base, engine
 
-# Import database models
+# Database models
 from app.models.task import Task
 from app.models.finance import FinanceTransaction
+from app.models.budget import MonthlyBudget
 
-# Import API routers
+# API routers
 from app.api.tasks import router as task_router
 from app.api.finance import router as finance_router
-
+from app.api.budgets import router as budget_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -35,6 +36,7 @@ app = FastAPI(
 # Register API routers
 app.include_router(task_router)
 app.include_router(finance_router)
+app.include_router(budget_router)
 
 
 @app.get("/")
