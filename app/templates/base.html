@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}ZenAssist{% endblock %}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">Z</div>
+                <span>ZenAssist</span>
+            </div>
+
+            <div class="sidebar-label">WORKSPACE</div>
+
+            <nav class="navigation">
+                <a href="/" class="nav-link active">
+                    <span class="nav-icon">▦</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">✓</span>
+                    <span>Productivity</span>
+                    <span class="nav-soon">Soon</span>
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">◈</span>
+                    <span>Finance</span>
+                    <span class="nav-soon">Soon</span>
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">◎</span>
+                    <span>Savings</span>
+                    <span class="nav-soon">Soon</span>
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">♧</span>
+                    <span>Fitness</span>
+                    <span class="nav-soon">Soon</span>
+                </a>
+
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">▤</span>
+                    <span>Notes</span>
+                    <span class="nav-soon">Soon</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-label">SYSTEM</div>
+
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">⚙</span>
+                    <span>Settings</span>
+                </a>
+
+                <div class="profile">
+                    <div class="avatar">Z</div>
+                    <div class="profile-info">
+                        <strong>ZenAssist User</strong>
+                        <span>Personal Workspace</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <div class="breadcrumb">Workspace / <strong>Dashboard</strong></div>
+                </div>
+
+                <div class="topbar-right">
+                    <div class="system-status">
+                        <span class="status-dot"></span>
+                        System Online
+                    </div>
+                    <div class="topbar-avatar">Z</div>
+                </div>
+            </header>
+
+            <section class="page-content">
+                {% block content %}{% endblock %}
+            </section>
+        </main>
+
+    </div>
+
+    <script src="{{ url_for('static', path='/js/dashboard.js') }}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,121 @@
+
+{% extends "base.html" %}
+
+{% block title %}Dashboard | ZenAssist{% endblock %}
+
+{% block content %}
+
+<div class="welcome-section">
+    <div>
+        <div class="eyebrow">PERSONAL WORKSPACE</div>
+        <h1>Good day, welcome back.</h1>
+        <p>Here's an overview of your personal activities.</p>
+    </div>
+
+    <div class="date-card">
+        <span class="date-label">TODAY</span>
+        <strong id="current-date">Loading date...</strong>
+    </div>
+</div>
+
+<div class="section-heading">
+    <div>
+        <h2>Overview</h2>
+        <p>Your personal summary at a glance.</p>
+    </div>
+</div>
+
+<div class="overview-grid">
+
+    <div class="overview-card">
+        <div class="card-top">
+            <span class="card-label">Total Tasks</span>
+            <span class="card-icon purple">✓</span>
+        </div>
+        <div class="card-value">—</div>
+        <div class="card-description">Task management overview</div>
+    </div>
+
+    <div class="overview-card">
+        <div class="card-top">
+            <span class="card-label">Monthly Income</span>
+            <span class="card-icon green">↗</span>
+        </div>
+        <div class="card-value">—</div>
+        <div class="card-description">Total income this month</div>
+    </div>
+
+    <div class="overview-card">
+        <div class="card-top">
+            <span class="card-label">Monthly Expenses</span>
+            <span class="card-icon orange">↘</span>
+        </div>
+        <div class="card-value">—</div>
+        <div class="card-description">Total expenses this month</div>
+    </div>
+
+    <div class="overview-card">
+        <div class="card-top">
+            <span class="card-label">Savings Goals</span>
+            <span class="card-icon blue">◎</span>
+        </div>
+        <div class="card-value">—</div>
+        <div class="card-description">Your savings progress</div>
+    </div>
+
+</div>
+
+<div class="section-heading">
+    <div>
+        <h2>Workspace</h2>
+        <p>Quick access to your personal management modules.</p>
+    </div>
+</div>
+
+<div class="workspace-grid">
+
+    <div class="workspace-card">
+        <div class="workspace-icon purple">✓</div>
+        <h3>Productivity</h3>
+        <p>Manage tasks, priorities, deadlines, and reminders.</p>
+        <span class="module-status">Coming soon</span>
+    </div>
+
+    <div class="workspace-card">
+        <div class="workspace-icon green">◈</div>
+        <h3>Finance</h3>
+        <p>Track your income, expenses, and monthly budgets.</p>
+        <span class="module-status">API available</span>
+    </div>
+
+    <div class="workspace-card">
+        <div class="workspace-icon blue">◎</div>
+        <h3>Savings</h3>
+        <p>Track savings goals and monitor your progress.</p>
+        <span class="module-status">API available</span>
+    </div>
+
+    <div class="workspace-card">
+        <div class="workspace-icon orange">♧</div>
+        <h3>Fitness</h3>
+        <p>Manage workout routines and fitness activities.</p>
+        <span class="module-status">Coming soon</span>
+    </div>
+
+    <div class="workspace-card">
+        <div class="workspace-icon pink">▤</div>
+        <h3>Notes</h3>
+        <p>Keep your ideas, thoughts, and important notes.</p>
+        <span class="module-status">Coming soon</span>
+    </div>
+
+    <div class="workspace-card assistant-card">
+        <div class="workspace-icon blue">✦</div>
+        <h3>AI Assistant</h3>
+        <p>Your intelligent assistant for everyday activities.</p>
+        <span class="module-status">Coming soon</span>
+    </div>
+
+</div>
+
+{% endblock %}

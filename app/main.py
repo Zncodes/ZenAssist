@@ -1,7 +1,10 @@
 
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from fastapi import Request
 
 from app.config import settings
 from app.core.database import Base, engine
@@ -44,24 +47,39 @@ app.include_router(finance_router)
 app.include_router(budget_router)
 app.include_router(savings_router)
 app.include_router(finance_dashboard_router)
+app.mount(
+    "/static",
+    StaticFiles(directory="app/static"),
+    name="static"
+)
 
+templates = Jinja2Templates(
+    directory="app/templates"
+)
+
+# @app.get("/")
+# async def root():
+
+#     return {
+#         "application": settings.APP_NAME,
+#         "version": settings.APP_VERSION,
+#         "status": "running",
+#         "modules": [
+#             "productivity",
+#             "finance",
+#             "fitness",
+#             "notes",
+#             "ai",
+#             "automation"
+#         ]
+#     }
 @app.get("/")
-async def root():
-
-    return {
-        "application": settings.APP_NAME,
-        "version": settings.APP_VERSION,
-        "status": "running",
-        "modules": [
-            "productivity",
-            "finance",
-            "fitness",
-            "notes",
-            "ai",
-            "automation"
-        ]
-    }
-
+async def root(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="dashboard.html",
+        context={}
+    )
 
 @app.get("/health")
 async def health_check():
